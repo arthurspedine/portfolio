@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+:root {
+    --header-color: #222222;
+    --bg-color: #e7e0de;
+    --font-color: #4A8FE7;
+}
+/* 00AF54 84DCC6 */
+
 * {
     padding: 0;
     margin: 0;
@@ -9,13 +16,22 @@
     scroll-behavior: smooth;
 }
 
+body {
+    width: 100vh;
+    flex-grow: 1;
+    background-color: var(--bg-color);
+}
+
 /* HEADER */
 header {
+    background-color: var(--header-color);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     padding: 17px 50px;
     transition: all 0.45s ease;
 }
@@ -26,8 +42,18 @@ header nav ul {
 }
 
 header nav ul li a {
-    font-size: 1.05rem;
+    color: var(--font-color);
+    font-size: 1.09rem;
     font-weight: 500;
     margin: 0 22px;
     transition: all 0.45s ease;
+}
+
+header nav ul li a:hover {
+    color: #00AF54;
+}
+
+section {
+    padding: 3% 15%;
+    height: 500px; /* TESTE */
 }
