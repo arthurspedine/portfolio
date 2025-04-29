@@ -1,4 +1,13 @@
 {
-  "welcome": "Bem-vindo",
-  "change_language": "Mudar idioma"
+  "header": {
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "switchLanguage": "Mudar idioma",
+  "switchTheme": "Mudar tema",
+  "footer": {
+    "rights": "Copyright © 2025 by Arthur Spedine. Todos os direitos reservados."
+  }
 }
