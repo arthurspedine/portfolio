@@ -1,13 +1,13 @@
 'use client'
 import type React from 'react'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Renderer, Program, Mesh, Triangle, Color } from 'ogl'
+import { useTheme } from 'next-themes'
 
 interface ThreadsProps {
-  color?: [number, number, number]
+  customColor?: [number, number, number]
   amplitude?: number
   distance?: number
-  enableMouseInteraction?: boolean
 }
 
 const vertexShader = `
@@ -127,19 +127,118 @@ void main() {
 }
 `
 
+// Helper function to convert CSS variable color to RGB array
+const getCssVariableColor = (variable: string): [number, number, number] => {
+  if (typeof window === 'undefined') return [1, 1, 1] // Default for SSR
+
+  const color = getComputedStyle(document.documentElement)
+    .getPropertyValue(variable)
+    .trim()
+
+  // Handle hex format
+  if (color.startsWith('#')) {
+    const hex = color.replace('#', '')
+    if (hex.length === 3) {
+      const r = Number.parseInt(hex[0] + hex[0], 16) / 255
+      const g = Number.parseInt(hex[1] + hex[1], 16) / 255
+      const b = Number.parseInt(hex[2] + hex[2], 16) / 255
+      return [r, g, b]
+    } else {
+      const r = Number.parseInt(hex.substring(0, 2), 16) / 255
+      const g = Number.parseInt(hex.substring(2, 4), 16) / 255
+      const b = Number.parseInt(hex.substring(4, 6), 16) / 255
+      return [r, g, b]
+    }
+  }
+
+  // Handle rgb/rgba format
+  if (color.startsWith('rgb')) {
+    const values = color.match(/\d+/g)
+    if (values && values.length >= 3) {
+      return [
+        Number.parseInt(values[0]) / 255,
+        Number.parseInt(values[1]) / 255,
+        Number.parseInt(values[2]) / 255,
+      ]
+    }
+  }
+
+  // Handle hsl format
+  if (color.startsWith('hsl')) {
+    const values = color.match(/\d+/g)
+    if (values && values.length >= 3) {
+      const h = Number.parseInt(values[0]) / 360
+      const s = Number.parseInt(values[1]) / 100
+      const l = Number.parseInt(values[2]) / 100
+
+      // Convert HSL to RGB
+      const c = (1 - Math.abs(2 * l - 1)) * s
+      const x = c * (1 - Math.abs(((h * 6) % 2) - 1))
+      const m = l - c / 2
+
+      let r, g, b
+      if (h < 1 / 6) {
+        r = c
+        g = x
+        b = 0
+      } else if (h < 2 / 6) {
+        r = x
+        g = c
+        b = 0
+      } else if (h < 3 / 6) {
+        r = 0
+        g = c
+        b = x
+      } else if (h < 4 / 6) {
+        r = 0
+        g = x
+        b = c
+      } else if (h < 5 / 6) {
+        r = x
+        g = 0
+        b = c
+      } else {
+        r = c
+        g = 0
+        b = x
+      }
+
+      return [r + m, g + m, b + m]
+    }
+  }
+
+  return [1, 1, 1] // Default fallback
+}
+
 export const Threads: React.FC<ThreadsProps> = ({
-  color = [1, 1, 1],
+  customColor,
   amplitude = 1,
   distance = 0,
-  enableMouseInteraction = false,
   ...rest
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const animationFrameId = useRef<number>(0)
+  const { theme, systemTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  // Make sure component is mounted to access CSS variables
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
-    if (!containerRef.current) return
+    if (!containerRef.current || !mounted) return
     const container = containerRef.current
+
+    // Determine the current theme
+    const currentTheme = theme === 'system' ? systemTheme : theme
+
+    // Get foreground color from CSS variables based on theme
+    const themeColor =
+      customColor ||
+      getCssVariableColor(
+        currentTheme === 'dark' ? '--foreground' : '--foreground'
+      )
 
     const renderer = new Renderer({ alpha: true })
     const gl = renderer.gl
@@ -161,10 +260,10 @@ export const Threads: React.FC<ThreadsProps> = ({
             gl.canvas.width / gl.canvas.height
           ),
         },
-        uColor: { value: new Color(...color) },
+        uColor: { value: new Color(...themeColor) },
         uAmplitude: { value: amplitude },
         uDistance: { value: distance },
-        uMouse: { value: new Float32Array([0.5, 0.5]) },
+        uMouse: { value: new Float32Array([0.5, 0.5]) }, // Fixed value since mouse interaction is disabled
       },
     })
 
@@ -180,34 +279,13 @@ export const Threads: React.FC<ThreadsProps> = ({
     window.addEventListener('resize', resize)
     resize()
 
-    const currentMouse = [0.5, 0.5]
-    let targetMouse = [0.5, 0.5]
-
-    function handleMouseMove(e: MouseEvent) {
-      const rect = container.getBoundingClientRect()
-      const x = (e.clientX - rect.left) / rect.width
-      const y = 1.0 - (e.clientY - rect.top) / rect.height
-      targetMouse = [x, y]
-    }
-    function handleMouseLeave() {
-      targetMouse = [0.5, 0.5]
-    }
-    if (enableMouseInteraction) {
-      container.addEventListener('mousemove', handleMouseMove)
-      container.addEventListener('mouseleave', handleMouseLeave)
-    }
+    // Mouse interaction removed as requested
 
     function update(t: number) {
-      if (enableMouseInteraction) {
-        const smoothing = 0.05
-        currentMouse[0] += smoothing * (targetMouse[0] - currentMouse[0])
-        currentMouse[1] += smoothing * (targetMouse[1] - currentMouse[1])
-        program.uniforms.uMouse.value[0] = currentMouse[0]
-        program.uniforms.uMouse.value[1] = currentMouse[1]
-      } else {
-        program.uniforms.uMouse.value[0] = 0.5
-        program.uniforms.uMouse.value[1] = 0.5
-      }
+      // Fixed mouse values at center (0.5, 0.5) since interaction is disabled
+      program.uniforms.uMouse.value[0] = 0.5
+      program.uniforms.uMouse.value[1] = 0.5
+
       program.uniforms.iTime.value = t * 0.001
 
       renderer.render({ scene: mesh })
@@ -215,21 +293,42 @@ export const Threads: React.FC<ThreadsProps> = ({
     }
     animationFrameId.current = requestAnimationFrame(update)
 
+    // Theme change observer
+    const observer = new MutationObserver(() => {
+      const updatedThemeColor =
+        customColor ||
+        getCssVariableColor(
+          document.documentElement.classList.contains('dark')
+            ? '--foreground'
+            : '--foreground'
+        )
+      program.uniforms.uColor.value = new Color(...updatedThemeColor)
+    })
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+
     return () => {
       if (animationFrameId.current)
         cancelAnimationFrame(animationFrameId.current)
       window.removeEventListener('resize', resize)
 
-      if (enableMouseInteraction) {
-        container.removeEventListener('mousemove', handleMouseMove)
-        container.removeEventListener('mouseleave', handleMouseLeave)
-      }
+      // No event listeners to remove as mouse interaction is disabled
       if (container.contains(gl.canvas)) container.removeChild(gl.canvas)
       gl.getExtension('WEBGL_lose_context')?.loseContext()
+
+      observer.disconnect()
     }
-  }, [color, amplitude, distance, enableMouseInteraction])
+  }, [customColor, amplitude, distance, theme, systemTheme, mounted])
 
   return (
-    <div ref={containerRef} className='w-full h-screen absolute' {...rest} />
+    <div
+      ref={containerRef}
+      className='w-full h-screen absolute'
+      aria-hidden='true'
+      {...rest}
+    />
   )
 }

@@ -190,3 +190,62 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add these animations and patterns to your globals.css */
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-spin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: reverse-spin 20s linear infinite;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(var(--foreground-rgb), 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--foreground-rgb), 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(var(--foreground-rgb), 0.4) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

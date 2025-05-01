@@ -81,12 +81,12 @@ export function MobileHeader() {
             <Menu className='size-6' />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className='w-56 mr-4'>
+        <DropdownMenuContent className='w-56 mr-4 p-2'>
           {menuItems.map(item => (
             <motion.div
               key={item.href}
               variants={menuItemVariants}
-              whileHover={{ x: 5 }}
+              whileHover={{ x: 4 }}
               whileTap={{ scale: 0.95 }}
             >
               <DropdownMenuItem asChild>

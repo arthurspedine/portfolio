@@ -58,7 +58,7 @@ export function Header() {
         </a>
       </div>
 
-      <nav className='hidden md:flex gap-6'>
+      <nav className='hidden md:flex gap-6 text-sm'>
         <Link href='#about'>{t('about')}</Link>
         <Link href='#skills'>{t('skills')}</Link>
         <Link href='#projects'>{t('projects')}</Link>
