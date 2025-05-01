@@ -229,5 +229,7 @@ export const Threads: React.FC<ThreadsProps> = ({
     }
   }, [color, amplitude, distance, enableMouseInteraction])
 
-  return <div ref={containerRef} className='w-full h-full relative' {...rest} />
+  return (
+    <div ref={containerRef} className='w-full h-screen absolute' {...rest} />
+  )
 }

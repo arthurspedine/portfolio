@@ -92,7 +92,7 @@ export function MobileHeader() {
               <DropdownMenuItem asChild>
                 <Link
                   href={item.href}
-                  className='text-xl font-medium hover:cursor-pointer'
+                  className='text-md font-medium hover:cursor-pointer'
                   onClick={handleLinkClick}
                 >
                   {t(item.label)}
