@@ -7,6 +7,13 @@
   },
   "switchLanguage": "Mudar idioma",
   "switchTheme": "Mudar tema",
+  "landingPage": {
+    "greeting": "Olá, eu sou",
+    "role": "Desenvolvedor Full-Stack",
+    "description": "Especializado em desenvolver aplicações full stack, com foco em performance, segurança e uma experiência fluida de ponta a ponta.",
+    "contactBtn": "Entre em contato",
+    "resumeBtn": "Ver Currículo"
+  },
   "footer": {
     "rights": "Copyright © 2025 by Arthur Spedine. Todos os direitos reservados."
   }

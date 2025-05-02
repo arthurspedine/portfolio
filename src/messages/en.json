@@ -7,6 +7,13 @@
   },
   "switchLanguage": "Switch language",
   "switchTheme": "Mudar tema",
+  "landingPage": {
+    "greeting": "Hi, I'm",
+    "role": "Full-Stack Developer",
+    "description": "Specialized in building full stack applications with a focus on performance, security, and seamless end-to-end experiences.",
+    "contactBtn": "Contact Me",
+    "resumeBtn": "View Resume"
+  },
   "footer": {
     "rights": "Copyright © 2025 by Arthur Spedine. All rights reserved."
   }
