@@ -115,130 +115,135 @@ export function LandingComponent() {
   }, [pathname])
 
   return (
-    <div className='relative min-h-screen z-5 w-full flex flex-col lg:flex-row items-center justify-between pt-20 pb-4 md:py-24 px-4 overflow-x-hidden'>
-      <div className='w-full space-y-2 lg:w-3/5 lg:space-y-4 mb-6 lg:mb-0'>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className='flex space-y-4 flex-col sm:flex-row sm:justify-between sm:space-y-0'
-        >
-          <div>
-            <div className='inline-flex items-center space-x-2 lg:mb-4 text-primary/80'>
-              <Terminal className='size-5' />
-              <span className='text-sm font-code'>~/portfolio/main</span>
+    <>
+      <div className='absolute bg-grid-pattern min-h-screen w-full shadow-lg shadow-foreground/10' />
+      <div className='relative min-h-screen z-5 w-full max-w-[1440px] mx-auto flex flex-col items-center justify-between pt-20 pb-4 px-4 overflow-x-hidden md:py-24 lg:flex-row'>
+        <div className='w-full space-y-2 lg:w-3/5 lg:space-y-4 mb-6 lg:mb-0'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className='flex space-y-4 flex-col sm:flex-row sm:justify-between sm:space-y-0'
+          >
+            <div>
+              <div className='inline-flex items-center space-x-2 lg:mb-4 text-primary/80'>
+                <Terminal className='size-5' />
+                <span className='text-sm font-code'>~/portfolio/main</span>
+              </div>
+              <h1 className='text-3xl lg:text-6xl font-bold bg-gradient-to-tr from-primary to-primary/60 bg-clip-text text-transparent'>
+                <span className='text-2xl lg:text-4xl font-medium text-wrap'>
+                  {t('greeting')}{' '}
+                </span>
+                Arthur Spedine
+              </h1>
+              <p className='mt-2 text-lg md:text-xl text-secondary-foreground'>
+                {t('role')}
+              </p>
+              <p className='text-sm md:text-lg text-muted-foreground w-full sm:max-w-3/4'>
+                {t('description')}
+              </p>
             </div>
-            <h1 className='text-3xl lg:text-6xl font-bold bg-gradient-to-tr from-primary to-primary/60 bg-clip-text text-transparent'>
-              <span className='text-2xl lg:text-4xl font-medium text-wrap'>
-                {t('greeting')}{' '}
-              </span>
-              Arthur Spedine
-            </h1>
-            <p className='mt-2 text-lg md:text-xl text-secondary-foreground'>
-              {t('role')}
-            </p>
-            <p className='text-sm md:text-lg text-muted-foreground w-full sm:max-w-3/4'>
-              {t('description')}
-            </p>
-          </div>
 
-          <div className='flex flex-col items-center lg:hidden gap-4 sm:pt-6'>
-            <ProfileImage
-              width={160}
-              height={160}
-              className={'shadow-md shadow-primary/50 sm:mx-auto object-cover'}
-            />
-            <ProfileInfoButton className='sm:flex-row sm:items-center' />
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className='pt-0 md:pt-6'
-        >
-          <h2 className='text-lg text-foreground/80 flex items-center gap-2'>
-            <Code className='size-5' /> <span>Tech Stack</span>
-          </h2>
-          <div className='my-2 sm:mt-4 flex flex-wrap gap-2'>
-            {[
-              'Java',
-              'Spring Boot',
-              'PostgreSQL',
-              'Oracle SQL',
-              'Docker',
-              'AWS',
-              'Azure',
-              'Next.Js',
-              'React',
-            ].map((tech, i) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 + i * 0.1 }}
-                className='px-2 py-1 bg-secondary/30 border border-border rounded-md text-xs sm:text-sm font-code'
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
-        {/* TERMINAL */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className='sm:mt-8 border border-border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden'
-        >
-          <div className='bg-muted p-2 flex items-center border-b border-border'>
-            <div className='flex gap-1.5'>
-              <div className='size-3 rounded-full bg-red-500' />
-              <div className='size-3 rounded-full bg-yellow-500' />
-              <div className='size-3 rounded-full bg-green-500' />
+            <div className='flex flex-col items-center lg:hidden gap-4 sm:pt-6'>
+              <ProfileImage
+                width={160}
+                height={160}
+                className={
+                  'shadow-md shadow-primary/50 sm:mx-auto object-cover'
+                }
+              />
+              <ProfileInfoButton className='sm:flex-row sm:items-center' />
             </div>
-            <div className='text-xs font-code text-foreground/70 flex-1 -ml-10 text-center'>
-              spedine-terminal
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className='pt-0 md:pt-6'
+          >
+            <h2 className='text-lg text-foreground/80 flex items-center gap-2'>
+              <Code className='size-5' /> <span>Tech Stack</span>
+            </h2>
+            <div className='my-2 sm:mt-4 flex flex-wrap gap-2'>
+              {[
+                'Java',
+                'Spring Boot',
+                'PostgreSQL',
+                'Oracle SQL',
+                'Docker',
+                'AWS',
+                'Azure',
+                'Next.Js',
+                'React',
+              ].map((tech, i) => (
+                <motion.span
+                  key={tech}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                  className='px-2 py-1 bg-secondary/30 border border-border rounded-md text-xs sm:text-sm font-code'
+                >
+                  {tech}
+                </motion.span>
+              ))}
             </div>
-          </div>
-          <div
-            ref={terminalRef}
-            className='font-code text-sm py-2 px-1 h-36 sm:h-56 md:h-64 overflow-y-auto whitespace-pre-line text-foreground/90 sm:px-4
+          </motion.div>
+          {/* TERMINAL */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className='sm:mt-8 border border-border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden'
+          >
+            <div className='bg-muted p-2 flex items-center border-b border-border'>
+              <div className='flex gap-1.5'>
+                <div className='size-3 rounded-full bg-red-500' />
+                <div className='size-3 rounded-full bg-yellow-500' />
+                <div className='size-3 rounded-full bg-green-500' />
+              </div>
+              <div className='text-xs font-code text-foreground/70 flex-1 -ml-10 text-center'>
+                spedine-terminal
+              </div>
+            </div>
+            <div
+              ref={terminalRef}
+              className='font-code text-sm py-2 px-1 h-36 sm:h-56 md:h-64 overflow-y-auto whitespace-pre-line text-foreground/90 sm:px-4
                   [&::-webkit-scrollbar]:w-2 
                   [&::-webkit-scrollbar-track]:bg-accent
                   [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb]:hover:bg-border/80
                   dark:[&::-webkit-scrollbar-track]:bg-secondary dark:[&::-webkit-scrollbar-thumb]:bg-border
                   dark:[&::-webkit-scrollbar-thumb]:hover:bg-border/80
                   '
+            >
+              <span className='text-green-500'>
+                spedine@server:
+                <span className='text-blue-500'>~/portfolio/main</span>
+                <span className='text-foreground'>$</span>
+              </span>{' '}
+              <span className='animate-pulse'>_</span>
+            </div>
+          </motion.div>
+        </div>
+        {/* RIGHT SIDE */}
+        <div className='w-full lg:w-2/5 gap-12 flex-col hidden lg:flex'>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className='flex-col items-center justify-center relative hidden lg:flex'
           >
-            <span className='text-green-500'>
-              spedine@server:
-              <span className='text-blue-500'>~/portfolio/main</span>
-              <span className='text-foreground'>$</span>
-            </span>{' '}
-            <span className='animate-pulse'>_</span>
-          </div>
-        </motion.div>
-      </div>
-      {/* RIGHT SIDE */}
-      <div className='w-full lg:w-2/5 gap-12 flex-col hidden lg:flex'>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className='flex-col items-center justify-center relative hidden lg:flex'
-        >
-          <div className='absolute inset-0 flex items-center justify-center z-10'>
-            <div className='size-72 rounded-full bg-primary/10 animate-pulse-slow' />
-            <div className='absolute size-96 border border-primary/20 rounded-full animate-spin-slow' />
-            <div className='absolute size-80 border border-dashed border-primary/30 rounded-full animate-reverse-spin' />
-          </div>
+            <div className='absolute inset-0 flex items-center justify-center z-10'>
+              <div className='size-72 rounded-full bg-primary/10 animate-pulse-slow' />
+              <div className='absolute size-96 border border-primary/20 rounded-full animate-spin-slow' />
+              <div className='absolute size-80 border border-dashed border-primary/30 rounded-full animate-reverse-spin' />
+            </div>
 
-          {/* MY IMAGE */}
-          <ProfileImage />
-        </motion.div>
-        <ProfileInfoButton />
+            {/* MY IMAGE */}
+            <ProfileImage />
+          </motion.div>
+          <ProfileInfoButton />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
