@@ -1,21 +1,41 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Code, Terminal } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { ProfileImage } from '@/components/profile-image'
 import { useTranslations } from 'next-intl'
 import { ProfileInfoButton } from '@/components/profile-info-button'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 export function LandingComponent() {
   const terminalRef = useRef<HTMLDivElement>(null)
   const t = useTranslations('landingPage')
+  const [mounted, setMounted] = useState(false)
+  const { theme } = useTheme()
+
+  const techStack = [
+    { name: 'Java', icon: 'java.svg' },
+    { name: 'Spring Boot', icon: 'spring-boot.svg' },
+    { name: 'PostgreSQL', icon: 'postgresql.svg' },
+    { name: 'Oracle SQL', icon: 'oracle-sql.svg' },
+    { name: 'Docker', icon: 'docker.svg' },
+    { name: 'AWS', icon: 'aws-light.svg', dark: 'aws-dark.svg' },
+    { name: 'Azure', icon: 'azure.svg' },
+    { name: 'Next.Js', icon: 'next-light.svg', dark: 'next-dark.svg' },
+    { name: 'React', icon: 'react.svg' },
+  ]
 
   const pathname = usePathname()
 
   const userPwd =
     '<span class="text-green-500">spedine@server:<span class="text-blue-500">~/portfolio/main</span><span class="text-foreground">$</span></span>'
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     if (!terminalRef.current || !pathname) return
@@ -168,25 +188,25 @@ export function LandingComponent() {
               <Code className='size-5' /> <span>Tech Stack</span>
             </h2>
             <div className='my-2 sm:mt-4 flex flex-wrap gap-2'>
-              {[
-                'Java',
-                'Spring Boot',
-                'PostgreSQL',
-                'Oracle SQL',
-                'Docker',
-                'AWS',
-                'Azure',
-                'Next.Js',
-                'React',
-              ].map((tech, i) => (
+              {techStack.map((tech, i) => (
                 <motion.span
-                  key={tech}
+                  key={tech.name}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 + i * 0.1 }}
-                  className='px-2 py-1 bg-secondary/30 border border-border rounded-md text-xs sm:text-sm font-code'
+                  className='flex items-center gap-2 px-2 py-1 bg-secondary/30 border border-border rounded-md text-xs sm:text-sm font-code'
                 >
-                  {tech}
+                  <Image
+                    src={
+                      mounted && tech.dark && theme === 'dark'
+                        ? `/svg/tech-stack/${tech.dark}`
+                        : `/svg/tech-stack/${tech.icon}`
+                    }
+                    width={20}
+                    height={20}
+                    alt={`${tech.name} icon`}
+                  />
+                  {tech.name}
                 </motion.span>
               ))}
             </div>

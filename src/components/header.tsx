@@ -8,17 +8,13 @@ import { ModeSwitcher } from './theme-switcher'
 import { usePathname, useRouter } from 'next/navigation'
 import { MobileHeader } from './mobile-header'
 import Image from 'next/image'
-import github_dark from '../../public/github_dark.svg'
-import github_light from '../../public/github_light.svg'
-import linkedin_dark from '../../public/linkedin_dark.svg'
-import linkedin_light from '../../public/linkedin_light.svg'
 import { useTheme } from 'next-themes'
 import { routes } from '@/helper/routes'
 
 export function Header() {
   const [mounted, setMounted] = useState(false)
   const t = useTranslations('header')
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
   const router = useRouter()
   const pathname = usePathname()
 
@@ -34,12 +30,6 @@ export function Header() {
     router.push(newPathname)
   }
 
-  const githubLogoSrc =
-    mounted && resolvedTheme === 'dark' ? github_dark : github_light
-
-  const linkedinLogoSrc =
-    mounted && resolvedTheme === 'dark' ? linkedin_dark : linkedin_light
-
   return (
     <header className='fixed top-0 sm:top-2 max-w-[1440px] w-full z-50 min-h-16 rounded-2xl rounded-b-none shadow-xl flex items-center justify-between px-4 py-3 border-border/25 border backdrop-blur-xs'>
       <div className='flex items-center space-x-4'>
@@ -48,14 +38,32 @@ export function Header() {
           target='_blank'
           rel='noreferrer'
         >
-          <Image src={githubLogoSrc} className='size-8' alt='GitHub Icon' />
+          <Image
+            src={
+              mounted && theme === 'dark'
+                ? '/svg/about/github_dark.svg'
+                : '/svg/about/github_light.svg'
+            }
+            width={32}
+            height={32}
+            alt='GitHub Icon'
+          />
         </a>
         <a
           href='https://linkedin.com/in/arthurspedine'
           target='_blank'
           rel='noreferrer'
         >
-          <Image src={linkedinLogoSrc} className='size-8' alt='GitHub Icon' />
+          <Image
+            src={
+              mounted && theme === 'dark'
+                ? '/svg/about/linkedin_dark.svg'
+                : '/svg/about/linkedin_light.svg'
+            }
+            width={32}
+            height={32}
+            alt='Linkedin Icon'
+          />
         </a>
       </div>
 
