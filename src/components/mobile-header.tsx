@@ -1,6 +1,4 @@
 'use client'
-
-import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { Menu } from 'lucide-react'
@@ -12,60 +10,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
+import { routes } from '@/helper/routes'
 
 export function MobileHeader() {
-  const [isOpen, setIsOpen] = useState(false)
   const t = useTranslations('header')
-
-  const menuItems = [
-    { href: '#about', label: 'about' },
-    { href: '#skills', label: 'skills' },
-    { href: '#projects', label: 'projects' },
-    { href: '#contact', label: 'contact' },
-  ]
-
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      x: '100%',
-      transition: {
-        type: 'spring',
-        stiffness: 300,
-        damping: 30,
-      },
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 300,
-        damping: 30,
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  const menuItemVariants = {
-    closed: { x: 50, opacity: 0 },
-    open: { x: 0, opacity: 1 },
-  }
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen)
-
-    if (!isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
-  }
-
-  const handleLinkClick = () => {
-    setIsOpen(false)
-    document.body.style.overflow = 'auto'
-  }
 
   return (
     <div className='md:hidden relative'>
@@ -74,7 +22,6 @@ export function MobileHeader() {
           <Button
             variant='ghost'
             size='icon'
-            onClick={handleToggle}
             aria-label='Toggle Menu'
             className='size-8 flex items-center'
           >
@@ -82,10 +29,9 @@ export function MobileHeader() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className='w-56 mr-4 p-2'>
-          {menuItems.map(item => (
+          {routes.map(item => (
             <motion.div
               key={item.href}
-              variants={menuItemVariants}
               whileHover={{ x: 4 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -93,7 +39,6 @@ export function MobileHeader() {
                 <Link
                   href={item.href}
                   className='text-md font-medium hover:cursor-pointer'
-                  onClick={handleLinkClick}
                 >
                   {t(item.label)}
                 </Link>

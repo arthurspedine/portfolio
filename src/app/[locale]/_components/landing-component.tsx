@@ -38,7 +38,7 @@ export function LandingComponent() {
       { type: 'status', text: 'initializing API endpoints...' },
       {
         type: 'output',
-        text: 'Endpoints available: /api/projects, /api/skills, /api/contact, /api/resume',
+        text: 'Endpoints available: /api/projects, /api/experiences, /api/skills, /api/contact, /api/resume',
       },
       { type: 'status', text: 'portfolio loaded successfully' },
       { type: 'success', text: 'Portfolio system operational. Welcome!' },
@@ -117,11 +117,14 @@ export function LandingComponent() {
   return (
     <>
       <div className='absolute bg-grid-pattern min-h-screen w-full shadow-lg shadow-foreground/10' />
-      <div className='relative min-h-screen z-5 w-full max-w-[1440px] mx-auto flex flex-col items-center justify-between pt-20 pb-4 px-4 overflow-x-hidden md:py-24 lg:flex-row'>
+      <div
+        id='about'
+        className='relative min-h-screen z-5 w-full max-w-[1440px] mx-auto flex flex-col items-center justify-between pt-20 pb-4 px-4 overflow-x-hidden md:py-24 lg:flex-row'
+      >
         <div className='w-full space-y-2 lg:w-3/5 lg:space-y-4 mb-6 lg:mb-0'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className='flex space-y-4 flex-col sm:flex-row sm:justify-between sm:space-y-0'
           >
@@ -179,7 +182,7 @@ export function LandingComponent() {
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 + i * 0.1 }}
                   className='px-2 py-1 bg-secondary/30 border border-border rounded-md text-xs sm:text-sm font-code'
                 >

@@ -13,6 +13,7 @@ import github_light from '../../public/github_light.svg'
 import linkedin_dark from '../../public/linkedin_dark.svg'
 import linkedin_light from '../../public/linkedin_light.svg'
 import { useTheme } from 'next-themes'
+import { routes } from '@/helper/routes'
 
 export function Header() {
   const [mounted, setMounted] = useState(false)
@@ -59,10 +60,11 @@ export function Header() {
       </div>
 
       <nav className='hidden md:flex gap-6 text-sm'>
-        <Link href='#about'>{t('about')}</Link>
-        <Link href='#skills'>{t('skills')}</Link>
-        <Link href='#projects'>{t('projects')}</Link>
-        <Link href='#contact'>{t('contact')}</Link>
+        {routes.map(route => (
+          <Link key={route.label} href={route.href}>
+            {t(route.label)}
+          </Link>
+        ))}
       </nav>
 
       <div className='flex items-center space-x-2'>

@@ -29,7 +29,8 @@
 				"noDangerouslySetInnerHtml": "info"
 			},
 			"complexity": {
-				"noStaticOnlyClass": "off"
+				"noStaticOnlyClass": "off",
+				"noForEach": "off"
 			},
 			"correctness": {
 				"noUnusedImports": "error"

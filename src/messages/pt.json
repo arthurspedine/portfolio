@@ -3,6 +3,7 @@
     "about": "Sobre",
     "skills": "Habilidades",
     "projects": "Projetos",
+    "experiences": "Experiências",
     "contact": "Contato"
   },
   "switchLanguage": "Mudar idioma",
@@ -13,6 +14,47 @@
     "description": "Especializado em desenvolver aplicações full stack, com foco em performance, segurança e uma experiência fluida de ponta a ponta.",
     "contactBtn": "Entre em contato",
     "resumeBtn": "Ver Currículo"
+  },
+  "experiences": {
+    "title": "Minha Trajetória",
+    "description": "Experiências profissionais e acadêmicas",
+    "professional": "Experiências Profissionais",
+    "education": "Formações Acadêmicas",
+    "mainSkillsText": "Principais habilidades",
+    "summmary": {
+      "opella": {
+        "title": "Efetividade da Força de Vendas",
+        "period": "Jan/2025 - Atual",
+        "description": "Atuação na área de Efetividade da Força de Vendas, com foco em gestão de acessos, manutenção de dados da força ativa e automação de relatórios com KNIME e Excel.",
+        "mainSkills": {
+          "1": {
+            "label": "KNIME"
+          },
+          "2": {
+            "label": "Excel"
+          },
+          "3": {
+            "label": "Scrum"
+          }
+        }
+      },
+      "fiap": {
+        "title": "Análise e Desenvolvimento de Sistemas",
+        "period": "Fev/2024 - Dez/2025",
+        "description": "Curso superior focado em desenvolvimento de software, bancos de dados, arquitetura de sistemas e metodologias ágeis com ênfase em projetos práticos.",
+        "mainSkills": {
+          "1": {
+            "label": "Aplicações Full Stack"
+          },
+          "2": {
+            "label": "Banco de Dados"
+          },
+          "3": {
+            "label": "Metodologias Ágeis"
+          }
+        }
+      }
+    }
   },
   "footer": {
     "rights": "Copyright © 2025 by Arthur Spedine. Todos os direitos reservados."

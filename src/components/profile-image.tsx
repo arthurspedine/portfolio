@@ -13,6 +13,7 @@ export function ProfileImage({
       className={cn('bg-accent/50 rounded-full shadow-2xl', className)}
       width={width}
       height={height}
+      priority={false}
     />
   )
 }

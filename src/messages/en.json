@@ -3,6 +3,7 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
+    "experiences": "Experiences",
     "contact": "Contact"
   },
   "switchLanguage": "Switch language",
@@ -13,6 +14,47 @@
     "description": "Specialized in building full stack applications with a focus on performance, security, and seamless end-to-end experiences.",
     "contactBtn": "Contact Me",
     "resumeBtn": "View Resume"
+  },
+  "experiences": {
+    "title": "My Journey",
+    "description": "Professional and Academic Experiences",
+    "professional": "Professional Experience",
+    "education": "Education Background",
+    "mainSkillsText": "Main Skills",
+    "summmary": {
+      "opella": {
+        "title": "Sales Force Effectiveness",
+        "period": "Jan/2025 - Present",
+        "description": "Performance in the Sales Force Effectiveness area, focusing on access management, active workforce data maintenance, and report automation using KNIME and Excel.",
+        "mainSkills": {
+          "1": {
+            "label": "KNIME"
+          },
+          "2": {
+            "label": "Excel"
+          },
+          "3": {
+            "label": "Scrum"
+          }
+        }
+      },
+      "fiap": {
+        "title": "Systems Analysis and Development",
+        "period": "Feb/2024 - Dec/2025",
+        "description": "Undergraduate program focused on software development, databases, system architecture, and agile methodologies, with an emphasis on practical projects.",
+        "mainSkills": {
+          "1": {
+            "label": "Full Stack applications"
+          },
+          "2": {
+            "label": "Databases"
+          },
+          "3": {
+            "label": "Agile Methodologies"
+          }
+        }
+      }
+    }
   },
   "footer": {
     "rights": "Copyright © 2025 by Arthur Spedine. All rights reserved."
