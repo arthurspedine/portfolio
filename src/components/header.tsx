@@ -69,9 +69,12 @@ export function Header() {
 
       <nav className='hidden md:flex gap-6 text-sm'>
         {routes.map(route => (
-          <Link key={route.label} href={route.href}>
-            {t(route.label)}
-          </Link>
+          <div key={route.label} className='relative group'>
+            <Link href={route.href} className='relative'>
+              {t(route.label)}
+              <span className='absolute h-0.5 bg-current left-0 -bottom-0.5 w-0 group-hover:w-full transition-all duration-300' />
+            </Link>
+          </div>
         ))}
       </nav>
 
