@@ -2,12 +2,14 @@ import type { ExperienceProps } from '@/types'
 import { motion } from 'framer-motion'
 import { Briefcase, BookOpen, Calendar, Code } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 export function ExperienceCard({
   title,
   organization,
   period,
   description,
+  icon,
   type,
   skills,
   delay,
@@ -38,11 +40,18 @@ export function ExperienceCard({
         </div>
       </div>
 
-      <p className='text-secondary-foreground mt-2'>{organization}</p>
+      <p className='text-secondary-foreground mt-2 flex gap-2'>
+        <Image
+          src={icon}
+          alt={`${organization} icon`}
+          width={64}
+          height={24}
+          className='rounded-md'
+        />
+        {organization}
+      </p>
 
-      {description && (
-        <p className='text-muted-foreground text-sm mt-1'>{description}</p>
-      )}
+      <p className='text-muted-foreground text-sm mt-1'>{description}</p>
 
       {skills && skills.length > 0 && (
         <div className='mt-3'>

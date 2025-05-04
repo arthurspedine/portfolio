@@ -83,6 +83,7 @@ export function ExperienceSection() {
                 organization={exp.organization}
                 period={exp.period}
                 description={exp.description}
+                icon={exp.icon}
                 type='professional'
                 skills={exp.skills}
                 delay={0.1 + index * 0.1}
@@ -113,6 +114,7 @@ export function ExperienceSection() {
                 organization={exp.organization}
                 period={exp.period}
                 description={exp.description}
+                icon={exp.icon}
                 type='academic'
                 skills={exp.skills}
                 delay={0.1 + index * 0.1}

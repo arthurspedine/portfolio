@@ -9,7 +9,8 @@ export type ExperienceProps = {
   title: string
   organization: string
   period: string
-  description?: string
+  description: string
+  icon: string
   type: ExperienceType
   skills?: Skill[]
   delay: number

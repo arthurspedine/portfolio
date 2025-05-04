@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
       organization: 'Opella',
       period: t('opella.period'),
       description: t('opella.description'),
+      icon: '/svg/experiences/opella.svg',
       type: 'professional' as const,
       skills: [
         { name: t('opella.mainSkills.1.label') },
@@ -24,6 +25,7 @@ export async function GET(request: NextRequest) {
       organization: 'FIAP',
       period: t('fiap.period'),
       description: t('fiap.description'),
+      icon: '/svg/experiences/fiap.svg',
       type: 'academic' as const,
       skills: [
         { name: t('fiap.mainSkills.1.label') },
