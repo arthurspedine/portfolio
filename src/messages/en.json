@@ -1,7 +1,6 @@
 {
   "header": {
     "about": "About",
-    "skills": "Skills",
     "projects": "Projects",
     "experiences": "Experiences",
     "contact": "Contact"
@@ -21,7 +20,7 @@
     "professional": "Professional Experience",
     "education": "Education Background",
     "mainSkillsText": "Main Skills",
-    "summmary": {
+    "summary": {
       "opella": {
         "title": "Sales Force Effectiveness",
         "period": "Jan/2025 - Present",
@@ -53,6 +52,23 @@
             "label": "Agile Methodologies"
           }
         }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "A showcase of my recent work and personal projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "featured": "Featured",
+    "technologies": "Technologies",
+    "summary": {
+      "pe-na-estrada": {
+        "description": "Smart solution designed for drivers seeking quick insights into vehicle issues. Using artificial intelligence, the platform delivers an initial diagnosis, estimates repair costs, and suggests nearby repair shops — all with a focus on transparency and safer decision-making.",
+        "award": "2nd place - NEXT 2024"
+      },
+      "spot-it": {
+        "description": "Interactive solution powered by artificial intelligence to locate specific faces within complex images — inspired by the “Where’s Waldo?” concept. The project delivers a playful and investigative experience by combining computer vision and real-time response."
       }
     }
   },

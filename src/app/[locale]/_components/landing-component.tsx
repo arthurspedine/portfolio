@@ -230,7 +230,7 @@ export function LandingComponent() {
             </div>
             <div
               ref={terminalRef}
-              className='font-code text-sm py-2 px-1 h-36 sm:h-56 md:h-64 overflow-y-auto whitespace-pre-line text-foreground/90 sm:px-4
+              className='font-code text-sm py-2 px-1 h-44 sm:h-72 overflow-y-auto whitespace-pre-line text-foreground/90 sm:px-4
                   [&::-webkit-scrollbar]:w-2 
                   [&::-webkit-scrollbar-track]:bg-accent
                   [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb]:hover:bg-border/80

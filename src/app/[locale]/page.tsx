@@ -2,6 +2,7 @@ import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { LandingComponent } from './_components/landing-component'
 import { ExperienceSection } from './_components/experience-section'
+import { ProjectsSection } from './_components/projects-section'
 
 export default function HomePage() {
   return (
@@ -9,6 +10,7 @@ export default function HomePage() {
       <LandingComponent />
       <div className='max-w-[1440px] mx-auto'>
         <Header />
+        <ProjectsSection />
         <ExperienceSection />
       </div>
       <Footer />

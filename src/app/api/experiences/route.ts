@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   const url = new URL(request.url)
   const locale = url.searchParams.get('locale') || 'en'
 
-  const t = await getTranslations({ locale, namespace: 'experiences.summmary' })
+  const t = await getTranslations({ locale, namespace: 'experiences.summary' })
   const experiences = [
     {
       title: t('opella.title'),

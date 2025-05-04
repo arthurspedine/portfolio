@@ -1,7 +1,6 @@
 {
   "header": {
     "about": "Sobre",
-    "skills": "Habilidades",
     "projects": "Projetos",
     "experiences": "Experiências",
     "contact": "Contato"
@@ -21,7 +20,7 @@
     "professional": "Experiências Profissionais",
     "education": "Formações Acadêmicas",
     "mainSkillsText": "Principais habilidades",
-    "summmary": {
+    "summary": {
       "opella": {
         "title": "Efetividade da Força de Vendas",
         "period": "Jan/2025 - Atual",
@@ -53,6 +52,23 @@
             "label": "Metodologias Ágeis"
           }
         }
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Uma mostra dos meus trabalhos recentes e projetos pessoais",
+    "viewProject": "Ver Projeto",
+    "viewCode": "Ver Código",
+    "featured": "Destaque",
+    "technologies": "Tecnologias",
+    "summary": {
+      "pe-na-estrada": {
+        "description": "Solução inteligente voltada para motoristas que buscam entender rapidamente problemas em seus veículos. Por meio do uso de inteligência artificial, a plataforma realiza um diagnóstico inicial, estima o custo do reparo e indica oficinas próximas, promovendo mais transparência e segurança na tomada de decisão.",
+        "award": "2° lugar - NEXT 2024"
+      },
+      "spot-it": {
+        "description": "Solução interativa que usa inteligência artificial para localizar rostos específicos em meio a imagens complexas, inspirada no conceito de “Onde está o Wally?”. O projeto oferece uma experiência lúdica e investigativa, integrando visão computacional e resposta em tempo real."
       }
     }
   },
