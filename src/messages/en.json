@@ -72,6 +72,11 @@
       }
     }
   },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Click on any information below to copy to clipboard",
+    "clickToCopy": "Click on any card to copy the information"
+  },
   "footer": {
     "rights": "Copyright © 2025 by Arthur Spedine. All rights reserved."
   }

@@ -58,7 +58,7 @@ export function LandingComponent() {
       { type: 'status', text: 'initializing API endpoints...' },
       {
         type: 'output',
-        text: 'Endpoints available: /api/projects, /api/experiences, /api/skills, /api/contact, /api/resume',
+        text: 'Endpoints available: /api/projects, /api/experiences, /api/contacts, /api/resume',
       },
       { type: 'status', text: 'portfolio loaded successfully' },
       { type: 'success', text: 'Portfolio system operational. Welcome!' },

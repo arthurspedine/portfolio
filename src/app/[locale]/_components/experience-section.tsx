@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import type { ExperienceProps } from '@/types'
 import { ExperienceCard } from '@/components/experience-card'
+import { Spinner } from '@/components/spinner'
 
 export function ExperienceSection() {
   const [professionalExperiences, setProfessionalExperiences] = useState<
@@ -15,6 +16,8 @@ export function ExperienceSection() {
   const [academicExperiences, setAcademicExperiences] = useState<
     ExperienceProps[]
   >([])
+
+  const [isLoading, setIsLoading] = useState(true)
 
   const t = useTranslations('experiences')
   const locale = useLocale()
@@ -39,6 +42,7 @@ export function ExperienceSection() {
 
       setProfessionalExperiences(professionalItems)
       setAcademicExperiences(academicItems)
+      setIsLoading(false)
     }
     getExperiences()
   }, [locale])
@@ -59,70 +63,75 @@ export function ExperienceSection() {
         </h2>
         <p className='text-muted-foreground mt-2'>{t('description')}</p>
       </motion.div>
+      {isLoading ? (
+        <div className='flex justify-center py-8'>
+          <Spinner />
+        </div>
+      ) : (
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12'>
+          {/* Professional Experiences */}
+          <div className='space-y-6'>
+            <motion.div
+              initial={{ opacity: 0 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              whileInView={{ opacity: 1 }}
+              className='flex items-center gap-2 mb-4'
+            >
+              <Briefcase className='size-5 text-primary' />
+              <h3 className='text-xl font-semibold'>{t('professional')}</h3>
+            </motion.div>
+            <div className='space-y-4'>
+              {professionalExperiences.map((exp, index) => (
+                <ExperienceCard
+                  key={`prof-${
+                    // biome-ignore lint/suspicious/noArrayIndexKey: no problem in this case
+                    index
+                  }`}
+                  title={exp.title}
+                  organization={exp.organization}
+                  period={exp.period}
+                  description={exp.description}
+                  icon={exp.icon}
+                  type='professional'
+                  skills={exp.skills}
+                  delay={0.1 + index * 0.1}
+                />
+              ))}
+            </div>
+          </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12'>
-        {/* Professional Experiences */}
-        <div className='space-y-6'>
-          <motion.div
-            initial={{ opacity: 0 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
-            whileInView={{ opacity: 1 }}
-            className='flex items-center gap-2 mb-4'
-          >
-            <Briefcase className='size-5 text-primary' />
-            <h3 className='text-xl font-semibold'>{t('professional')}</h3>
-          </motion.div>
-          <div className='space-y-4'>
-            {professionalExperiences.map((exp, index) => (
-              <ExperienceCard
-                key={`prof-${
-                  // biome-ignore lint/suspicious/noArrayIndexKey: no problem in this case
-                  index
-                }`}
-                title={exp.title}
-                organization={exp.organization}
-                period={exp.period}
-                description={exp.description}
-                icon={exp.icon}
-                type='professional'
-                skills={exp.skills}
-                delay={0.1 + index * 0.1}
-              />
-            ))}
+          {/* ACADEMIC EXPERIENCES */}
+          <div className='space-y-6'>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
+              className='flex items-center gap-2 mb-4'
+            >
+              <BookOpen className='size-5 text-primary' />
+              <h3 className='text-xl font-semibold'>{t('education')}</h3>
+            </motion.div>
+            <div className='space-y-4'>
+              {academicExperiences.map((exp, index) => (
+                <ExperienceCard
+                  key={`acad-${
+                    // biome-ignore lint/suspicious/noArrayIndexKey: no problem in this case
+                    index
+                  }`}
+                  title={exp.title}
+                  organization={exp.organization}
+                  period={exp.period}
+                  description={exp.description}
+                  icon={exp.icon}
+                  type='academic'
+                  skills={exp.skills}
+                  delay={0.1 + index * 0.1}
+                />
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* ACADEMIC EXPERIENCES */}
-        <div className='space-y-6'>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
-            className='flex items-center gap-2 mb-4'
-          >
-            <BookOpen className='size-5 text-primary' />
-            <h3 className='text-xl font-semibold'>{t('education')}</h3>
-          </motion.div>
-          <div className='space-y-4'>
-            {academicExperiences.map((exp, index) => (
-              <ExperienceCard
-                key={`acad-${
-                  // biome-ignore lint/suspicious/noArrayIndexKey: no problem in this case
-                  index
-                }`}
-                title={exp.title}
-                organization={exp.organization}
-                period={exp.period}
-                description={exp.description}
-                icon={exp.icon}
-                type='academic'
-                skills={exp.skills}
-                delay={0.1 + index * 0.1}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      )}
     </section>
   )
 }

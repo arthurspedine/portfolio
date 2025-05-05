@@ -72,6 +72,11 @@
       }
     }
   },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Clique em qualquer informação abaixo para copiar para a área de transferência",
+    "clickToCopy": "Clique em qualquer cartão para copiar a informação"
+  },
   "footer": {
     "rights": "Copyright © 2025 by Arthur Spedine. Todos os direitos reservados."
   }

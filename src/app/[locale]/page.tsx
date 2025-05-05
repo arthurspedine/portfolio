@@ -3,6 +3,7 @@ import { Header } from '@/components/header'
 import { LandingComponent } from './_components/landing-component'
 import { ExperienceSection } from './_components/experience-section'
 import { ProjectsSection } from './_components/projects-section'
+import { ContactSection } from './_components/contact-section'
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
         <Header />
         <ProjectsSection />
         <ExperienceSection />
+        <ContactSection />
       </div>
       <Footer />
     </main>
