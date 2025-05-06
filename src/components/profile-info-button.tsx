@@ -29,8 +29,8 @@ export function ProfileInfoButton({ className }: { className?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.2, duration: 0.8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
       className={cn('flex flex-col items-center gap-4', className)}
     >
       <Button className='w-40' asChild>

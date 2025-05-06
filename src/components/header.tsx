@@ -31,7 +31,7 @@ export function Header() {
   }
 
   return (
-    <header className='fixed top-0 sm:top-2 max-w-[1440px] w-full z-50 min-h-16 rounded-2xl rounded-b-none shadow-xl flex items-center justify-between px-4 py-3 border-border/25 border backdrop-blur-xs'>
+    <header className='fixed top-0 sm:top-2 max-w-[1440px] w-full z-50 min-h-16 rounded-2xl rounded-b-none shadow-xl flex items-center justify-between px-4 py-3 border-border/25 border backdrop-blur-md'>
       <div className='flex items-center space-x-4'>
         <a
           href='https://github.com/arthurspedine'

@@ -70,7 +70,6 @@ export function ContactSection() {
                 icon={iconMap[contact.iconName] || <User className='size-5' />}
                 label={contact.label}
                 value={contact.value}
-                delay={0.1 + index * 0.1}
                 className={shouldSpan ? 'md:col-span-2' : ''}
               />
             )
@@ -80,7 +79,7 @@ export function ContactSection() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.7, duration: 0.5 }}
+        transition={{ duration: 0.5 }}
         className='text-center mt-10 text-sm text-muted-foreground'
       >
         <p>{t('clickToCopy')}</p>

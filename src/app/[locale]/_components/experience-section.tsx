@@ -73,7 +73,7 @@ export function ExperienceSection() {
           <div className='space-y-6'>
             <motion.div
               initial={{ opacity: 0 }}
-              transition={{ delay: 0.3, duration: 0.3 }}
+              transition={{ duration: 0.3 }}
               whileInView={{ opacity: 1 }}
               className='flex items-center gap-2 mb-4'
             >
@@ -94,7 +94,6 @@ export function ExperienceSection() {
                   icon={exp.icon}
                   type='professional'
                   skills={exp.skills}
-                  delay={0.1 + index * 0.1}
                 />
               ))}
             </div>
@@ -105,7 +104,7 @@ export function ExperienceSection() {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.3 }}
+              transition={{ duration: 0.3 }}
               className='flex items-center gap-2 mb-4'
             >
               <BookOpen className='size-5 text-primary' />
@@ -125,7 +124,6 @@ export function ExperienceSection() {
                   icon={exp.icon}
                   type='academic'
                   skills={exp.skills}
-                  delay={0.1 + index * 0.1}
                 />
               ))}
             </div>

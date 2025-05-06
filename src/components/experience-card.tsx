@@ -12,14 +12,13 @@ export function ExperienceCard({
   icon,
   type,
   skills,
-  delay,
 }: ExperienceProps) {
   const t = useTranslations('experiences')
   return (
     <motion.div
       initial={{ opacity: 0, x: type === 'professional' ? -50 : 50 }}
       whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: delay, duration: 0.3 }}
+      transition={{ duration: 0.3 }}
       className='border border-border rounded-lg p-4 bg-card/60 backdrop-blur-sm hover:shadow-md hover:shadow-primary/10 transition-all relative overflow-hidden'
     >
       <div className='absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-primary/80 to-primary/20' />

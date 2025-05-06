@@ -7,7 +7,6 @@ type ContactItemProps = {
   icon: React.ReactNode
   label: string
   value: string
-  delay: number
   className?: string
 }
 
@@ -15,14 +14,13 @@ export function ContactCard({
   icon,
   label,
   value,
-  delay,
   className,
 }: ContactItemProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.4 }}
+      transition={{ duration: 0.3 }}
       className={cn(
         'flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-4 bg-card border border-border rounded-lg hover:shadow-md hover:shadow-primary/10 transition-all',
         className

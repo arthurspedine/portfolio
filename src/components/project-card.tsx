@@ -4,16 +4,13 @@ import { Trophy, Github, ExternalLink } from 'lucide-react'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
 
-export function ProjectCard({
-  project,
-  delay,
-}: { project: ProjectProps; delay: number }) {
+export function ProjectCard({ project }: { project: ProjectProps }) {
   const locale = useLocale()
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.5 }}
+      transition={{ duration: 0.5 }}
       className={`flex flex-col border border-border rounded-lg overflow-hidden bg-card/80 backdrop-blur-sm hover:shadow-md hover:shadow-primary/10 transition-all ${
         project.featured ? 'md:col-span-2' : ''
       }`}

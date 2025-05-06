@@ -13,7 +13,6 @@ export type ExperienceProps = {
   icon: string
   type: ExperienceType
   skills?: Skill[]
-  delay: number
 }
 
 export type ProjectProps = {

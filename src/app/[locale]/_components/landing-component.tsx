@@ -145,7 +145,7 @@ export function LandingComponent() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className='flex space-y-4 flex-col sm:flex-row sm:justify-between sm:space-y-0'
           >
             <div>
@@ -181,7 +181,7 @@ export function LandingComponent() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ duration: 0.5 }}
             className='pt-0 md:pt-6'
           >
             <h2 className='text-lg text-foreground/80 flex items-center gap-2'>
@@ -193,7 +193,7 @@ export function LandingComponent() {
                   key={tech.name}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.6 + i * 0.1 }}
+                  transition={{ duration: 0.3 }}
                   className='flex items-center gap-2 px-2 py-1 bg-secondary/30 border border-border rounded-md text-xs sm:text-sm font-code'
                 >
                   <Image
@@ -215,7 +215,7 @@ export function LandingComponent() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             className='sm:mt-8 border border-border rounded-lg bg-card/80 backdrop-blur-sm overflow-hidden'
           >
             <div className='bg-muted p-2 flex items-center border-b border-border'>
@@ -251,8 +251,8 @@ export function LandingComponent() {
         <div className='w-full lg:w-2/5 gap-12 flex-col hidden lg:flex'>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
             className='flex-col items-center justify-center relative hidden lg:flex'
           >
             <div className='absolute inset-0 flex items-center justify-center z-10'>
