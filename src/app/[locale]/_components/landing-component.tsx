@@ -135,11 +135,11 @@ export function LandingComponent() {
   }, [pathname])
 
   return (
-    <>
-      <div className='absolute bg-grid-pattern min-h-screen w-full shadow-lg shadow-foreground/10' />
+    <div className='relative w-full min-h-screen flex flex-col'>
+      <div className='absolute bg-grid-pattern h-full w-full shadow-lg shadow-foreground/10' />
       <div
         id='about'
-        className='relative min-h-screen z-5 w-full max-w-[1440px] mx-auto flex flex-col items-center justify-between pt-20 pb-4 px-4 overflow-x-hidden md:py-24 lg:flex-row'
+        className='relative z-10 w-full max-w-[1440px] mx-auto flex flex-col items-center justify-between pt-20 pb-4 px-4 overflow-x-hidden md:py-24 lg:flex-row'
       >
         <div className='w-full space-y-2 lg:w-3/5 lg:space-y-4 mb-6 lg:mb-0'>
           <motion.div
@@ -267,6 +267,6 @@ export function LandingComponent() {
           <ProfileInfoButton />
         </div>
       </div>
-    </>
+    </div>
   )
 }
