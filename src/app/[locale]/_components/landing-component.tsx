@@ -14,7 +14,7 @@ export function LandingComponent() {
   const terminalRef = useRef<HTMLDivElement>(null)
   const t = useTranslations('landingPage')
   const [mounted, setMounted] = useState(false)
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
 
   const techStack = [
     { name: 'Java', icon: 'java.svg' },
@@ -198,7 +198,7 @@ export function LandingComponent() {
                 >
                   <Image
                     src={
-                      mounted && tech.dark && theme === 'dark'
+                      mounted && tech.dark && resolvedTheme === 'dark'
                         ? `/svg/tech-stack/${tech.dark}`
                         : `/svg/tech-stack/${tech.icon}`
                     }

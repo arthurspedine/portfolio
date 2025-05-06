@@ -14,7 +14,7 @@ import { routes } from '@/helper/routes'
 export function Header() {
   const [mounted, setMounted] = useState(false)
   const t = useTranslations('header')
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const router = useRouter()
   const pathname = usePathname()
 
@@ -40,7 +40,7 @@ export function Header() {
         >
           <Image
             src={
-              mounted && theme === 'dark'
+              mounted && resolvedTheme === 'dark'
                 ? '/svg/about/github_dark.svg'
                 : '/svg/about/github_light.svg'
             }
@@ -56,7 +56,7 @@ export function Header() {
         >
           <Image
             src={
-              mounted && theme === 'dark'
+              mounted && resolvedTheme === 'dark'
                 ? '/svg/about/linkedin_dark.svg'
                 : '/svg/about/linkedin_light.svg'
             }
