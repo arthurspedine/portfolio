@@ -1,3 +1,4 @@
+import type { ProjectProps } from '@/types'
 import { getTranslations } from 'next-intl/server'
 import { type NextRequest, NextResponse } from 'next/server'
 
@@ -7,7 +8,7 @@ export async function GET(request: NextRequest) {
 
   const t = await getTranslations({ locale, namespace: 'projects.summary' })
 
-  const projects = [
+  const projects: ProjectProps[] = [
     {
       id: 'penaestrada-app',
       title: 'Pé na Estrada',
@@ -39,10 +40,48 @@ export async function GET(request: NextRequest) {
         'Azure',
         'Docker',
         'Node.Js',
+        'Typescript',
+        'Drizzle ORM',
       ],
       image: '/projects/spotit.png',
       liveUrl: 'https://ic-spot-it.vercel.app',
       featured: false,
+    },
+    {
+      id: 'kungfu-app',
+      title: 'Kung Fu App',
+      description: t('kungfuapp.description'),
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'PostgreSQL',
+        'Azure',
+        'CI/CD',
+        'Git Flow',
+        'Next.Js',
+        'Docker',
+      ],
+      image: '/projects/kungfuapp.png',
+      liveUrl: 'https://kungfutaishan.vercel.app',
+      github: 'https://github.com/arthurspedine/kungfu-server',
+      featured: false,
+    },
+    {
+      id: 'grade-app',
+      title: 'Grade',
+      description: t('grade.description'),
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'MySQL',
+        'VPS',
+        'CI/CD',
+        'New Relic',
+        'Auth0',
+        'Next.Js',
+      ],
+      image: '/projects/grade.png',
+      featured: true,
     },
   ]
 

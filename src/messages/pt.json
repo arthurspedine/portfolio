@@ -69,6 +69,12 @@
       },
       "spot-it": {
         "description": "Solução interativa que usa inteligência artificial para localizar rostos específicos em meio a imagens complexas, inspirada no conceito de “Onde está o Wally?”. O projeto oferece uma experiência lúdica e investigativa, integrando visão computacional e resposta em tempo real."
+      },
+      "kungfuapp": {
+        "description": "Aplicação desenvolvida para mestres e professores de Kung Fu que desejam gerenciar de forma prática seus núcleos e alunos. A plataforma permite o cadastro de núcleos, controle detalhado de alunos e gerenciamento das faixas, promovendo mais organização, autonomia e eficiência no acompanhamento da evolução dos praticantes."
+      },
+      "grade": {
+        "description": "Plataforma desenvolvida para professores do ensino superior gerenciarem turmas de Graduação, Pós-Graduação e MBA. Permite a criação de avaliações para uma ou mais turmas, geração de feedback com inteligência artificial e oferece um dashboard com indicadores-chave, como médias das turmas e avaliações pendentes, para facilitar o acompanhamento do desempenho."
       }
     }
   },

@@ -61,6 +61,11 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
         </div>
 
         <div className='flex justify-end space-x-3 pt-2'>
+          {!project.github && !project.liveUrl && (
+            <p className='text-muted-foreground hover:text-primary transition-colors'>
+              Building
+            </p>
+          )}
           {project.github && (
             <a
               href={project.github}

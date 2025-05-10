@@ -69,6 +69,12 @@
       },
       "spot-it": {
         "description": "Interactive solution powered by artificial intelligence to locate specific faces within complex images — inspired by the “Where’s Waldo?” concept. The project delivers a playful and investigative experience by combining computer vision and real-time response."
+      },
+      "kungfuapp": {
+        "description": "An application designed for Kung Fu masters and instructors to efficiently manage their schools and students. The platform allows for the creation of training centers, detailed student registration, and belt progression tracking, offering greater organization, autonomy, and efficiency in monitoring practitioners’ development."
+      },
+      "grade": {
+        "description": "Platform designed for higher education professors to manage undergraduate, postgraduate, and MBA classes. It enables the creation of assessments for one or more classes, automatic feedback generation using artificial intelligence, and provides a dashboard with key indicators, such as class averages and pending evaluations, to streamline performance tracking."
       }
     }
   },
