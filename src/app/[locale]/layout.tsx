@@ -27,7 +27,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className='scroll-smooth' suppressHydrationWarning>
-      <body className={`${sono.className} antialiased`}>
+      <body
+        className={`${sono.className} antialiased
+            [&::-webkit-scrollbar]:w-4 
+            [&::-webkit-scrollbar-track]:bg-accent
+            [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb]:hover:bg-border/80
+            dark:[&::-webkit-scrollbar-track]:bg-secondary dark:[&::-webkit-scrollbar-thumb]:bg-border
+            dark:[&::-webkit-scrollbar-thumb]:hover:bg-border/80
+      `}
+      >
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
