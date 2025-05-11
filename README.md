@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+A modern full stack web application designed to help Kung Fu masters and instructors manage students, track sash progress, and organize their local training centers.
 
-First, run the development server:
+This project reflects my passion for creating clean, responsive, and useful digital experiences — blending strong UI design with internationalization and accessibility support.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🌐 Multi-language support using `next-intl` (English & Portuguese)
+- 🌗 Light & dark theme toggle
+- ⚡ Smooth animations powered by `framer-motion`
+- 🎨 Styled with `Tailwind CSS` and `shadcn/ui` components
+- 🚀 Built with `Next.js` (App Router) and `TypeScript`
+- 📱 Fully responsive layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📸 Preview
 
-To learn more about Next.js, take a look at the following resources:
+<!-- Add images here as needed -->
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🖼 Landing Page  
+![image](https://github.com/user-attachments/assets/1f8bceb2-91b9-44b9-845e-ae14ddc62ed4)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### 🖼 Projects Section  
+![image](https://github.com/user-attachments/assets/99e6e0f1-220e-4576-a988-21ccb52d0468)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Technologies Used
+
+| Technology     |
+|----------------|
+| Next.js        |
+| TypeScript     |
+| Tailwind CSS   |
+| Framer Motion  |
+| next-intl      |
+| shadcn/ui      |
+
+---
+
+### 🌍 Localization
+Currently supports:
+
+- English (/en)
+
+- Portuguese (/pt)
+
+##### Easily extendable via src/messages.
+
+### 📬 Contact
+If you want to collaborate, give feedback, or just connect — feel free to reach out on [LinkedIn](https://www.linkedin.com/in/arthurspedine) or check out the other projects in the repo.
