@@ -22,8 +22,7 @@ This project reflects my passion for creating clean, responsive, and useful digi
 <!-- Add images here as needed -->
 
 ### 🖼 Landing Page  
-![image](https://github.com/user-attachments/assets/1f8bceb2-91b9-44b9-845e-ae14ddc62ed4)
-
+![image](https://github.com/user-attachments/assets/45306066-e73b-4326-adf1-f8fc783f10aa)
 
 ### 🖼 Projects Section  
 ![image](https://github.com/user-attachments/assets/99e6e0f1-220e-4576-a988-21ccb52d0468)
