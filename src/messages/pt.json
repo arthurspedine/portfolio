@@ -9,8 +9,8 @@
   "switchTheme": "Mudar tema",
   "landingPage": {
     "greeting": "Olá, eu sou",
-    "role": "Desenvolvedor Full-Stack",
-    "description": "Especializado em desenvolver aplicações full stack, com foco em performance, segurança e uma experiência fluida de ponta a ponta.",
+    "role": "Desenvolvedor Backend",
+    "description": "Especializado em desenvolver sistemas backend eficientes e escaláveis, também trabalho com aplicações full stack, priorizando performance, segurança e experiências fluidas de ponta a ponta",
     "contactBtn": "Entre em contato",
     "resumeBtn": "Ver Currículo"
   },

@@ -9,8 +9,8 @@
   "switchTheme": "Mudar tema",
   "landingPage": {
     "greeting": "Hi, I'm",
-    "role": "Full-Stack Developer",
-    "description": "Specialized in building full stack applications with a focus on performance, security, and seamless end-to-end experiences.",
+    "role": "Backend Developer",
+    "description": "I build scalable backend systems and full-stack applications, prioritizing performance, security, and smooth end-to-end user experiences.",
     "contactBtn": "Contact Me",
     "resumeBtn": "View Resume"
   },
