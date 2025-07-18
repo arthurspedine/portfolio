@@ -77,10 +77,11 @@ export async function GET(request: NextRequest) {
         'VPS',
         'CI/CD',
         'New Relic',
-        'Auth0',
+        'OAuth2',
         'Next.Js',
       ],
       image: '/projects/grade.png',
+      liveUrl: 'https://grade.use3w.com',
       featured: true,
     },
   ]
