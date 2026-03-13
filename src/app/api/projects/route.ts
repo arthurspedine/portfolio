@@ -10,9 +10,44 @@ export async function GET(request: NextRequest) {
 
   const projects: ProjectProps[] = [
     {
+      id: 'grade-app',
+      title: 'Grade',
+      description: t('grade.description'),
+      technologies: [
+        'Java',
+        'Spring Boot',
+        'MySQL',
+        'VPS',
+        'CI/CD',
+        'New Relic',
+        'OAuth2',
+        'Next.Js',
+      ],
+      image: '/projects/grade.png',
+      github: 'https://github.com/arthurspedine/grade-server',
+      featured: true,
+    },
+    {
+      id: 'trackit-api',
+      title: 'TrackIt API',
+      description: t('trackit.description'),
+      technologies: [
+        'Java 17',
+        'Spring Boot',
+        'Spring Security',
+        'Spring Data JPA',
+        'PostgreSQL',
+        'JWT',
+        'Docker',
+        'Gradle',
+      ],
+      image: '/projects/trackit.png',
+      github: 'https://github.com/arthurspedine/trackit-api',
+      featured: false,
+    },
+    {
       id: 'penaestrada-app',
       title: 'Pé na Estrada',
-
       description: t('pe-na-estrada.description'),
       technologies: [
         'Java',
@@ -62,27 +97,8 @@ export async function GET(request: NextRequest) {
         'Docker',
       ],
       image: '/projects/kungfuapp.png',
-      liveUrl: 'https://kungfutaishan.vercel.app',
       github: 'https://github.com/arthurspedine/kungfu-server',
       featured: false,
-    },
-    {
-      id: 'grade-app',
-      title: 'Grade',
-      description: t('grade.description'),
-      technologies: [
-        'Java',
-        'Spring Boot',
-        'MySQL',
-        'VPS',
-        'CI/CD',
-        'New Relic',
-        'OAuth2',
-        'Next.Js',
-      ],
-      image: '/projects/grade.png',
-      liveUrl: 'https://grade.use3w.com',
-      featured: true,
     },
   ]
 
@@ -96,5 +112,5 @@ export async function GET(request: NextRequest) {
         'public, max-age=3600, stale-while-revalidate=86400'
   )
 
-  return NextResponse.json(projects)
+  return response
 }

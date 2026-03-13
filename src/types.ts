@@ -21,7 +21,7 @@ export type ProjectProps = {
   description: string
   technologies: string[]
   image: string
-  github?: string
+  github?: string | string[]
   liveUrl?: string
   featured: boolean
   award?: string

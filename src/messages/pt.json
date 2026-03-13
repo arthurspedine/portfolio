@@ -23,7 +23,7 @@
     "summary": {
       "opella": {
         "title": "Efetividade da Força de Vendas",
-        "period": "Jan/2025 - Atual",
+        "period": "Jan/2025 - Dez/2025",
         "description": "Atuação na área de Efetividade da Força de Vendas, com foco em gestão de acessos, manutenção de dados da força ativa e automação de relatórios com KNIME e Excel.",
         "mainSkills": {
           "1": {
@@ -34,6 +34,22 @@
           },
           "3": {
             "label": "Scrum"
+          }
+        }
+      },
+      "reply": {
+        "title": "Analista Desenvolvedor Java Jr",
+        "period": "Jan/2026 - Atual",
+        "description": "Realizo análise de fluxo de dados em sistema distribuído, compreendendo a comunicação entre módulos e suas responsabilidades dentro da arquitetura da aplicação. Atuo também na configuração e ajuste de roles e grupos de permissão, garantindo a correta aplicação das regras de acesso no sistema.",
+        "mainSkills": {
+          "1": {
+            "label": "Java"
+          },
+          "2": {
+            "label": "Docker"
+          },
+          "3": {
+            "label": "Microserviços"
           }
         }
       },
@@ -75,6 +91,9 @@
       },
       "grade": {
         "description": "Plataforma desenvolvida para professores do ensino superior gerenciarem turmas de Graduação, Pós-Graduação e MBA. Permite a criação de avaliações para uma ou mais turmas, geração de feedback com inteligência artificial e oferece um dashboard com indicadores-chave, como médias das turmas e avaliações pendentes, para facilitar o acompanhamento do desempenho."
+      },
+      "trackit": {
+        "description": "API de rastreamento de despesas pessoais desenvolvida com arquitetura corporativa em Java. O projeto implementa princípios DDD, SOLID e TDD, servindo como uma demonstração prática de boas práticas de engenharia de software e padrões de design."
       }
     }
   },
@@ -84,6 +103,6 @@
     "clickToCopy": "Clique em qualquer cartão para copiar a informação"
   },
   "footer": {
-    "rights": "Copyright © 2025 by Arthur Spedine. Todos os direitos reservados."
+    "rights": "Copyright © 2026 by Arthur Spedine. Todos os direitos reservados."
   }
 }

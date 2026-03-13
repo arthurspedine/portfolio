@@ -39,7 +39,7 @@ export function ExperienceCard({
         </div>
       </div>
 
-      <p className='text-secondary-foreground mt-2 flex gap-2'>
+      <div className='flex items-center gap-2 mt-2 text-secondary-foreground'>
         <Image
           src={icon}
           alt={`${organization} icon`}
@@ -47,8 +47,8 @@ export function ExperienceCard({
           height={24}
           className='rounded-md'
         />
-        {organization}
-      </p>
+        <span className='font-medium'>{organization}</span>
+      </div>
 
       <p className='text-muted-foreground text-sm mt-1'>{description}</p>
 

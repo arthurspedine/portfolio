@@ -66,17 +66,37 @@ export function ProjectCard({ project }: { project: ProjectProps }) {
               Building
             </p>
           )}
-          {project.github && (
-            <a
-              href={project.github}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-muted-foreground hover:text-primary transition-colors'
-              aria-label='View GitHub repository'
-            >
-              <Github className='size-5' />
-            </a>
-          )}
+          {project.github &&
+            (Array.isArray(project.github) ? (
+              project.github.map((url, i) => (
+                <a
+                  key={url}
+                  href={url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='group relative text-muted-foreground hover:text-primary transition-colors'
+                  aria-label={`View GitHub repository ${url.split('/').filter(Boolean).pop()}`}
+                >
+                  <Github className='size-5' />
+                  <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-secondary border border-border text-secondary-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-sm'>
+                    {url.split('/').filter(Boolean).pop()}
+                  </span>
+                </a>
+              ))
+            ) : (
+              <a
+                href={project.github}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group relative text-muted-foreground hover:text-primary transition-colors'
+                aria-label='View GitHub repository'
+              >
+                <Github className='size-5' />
+                <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-secondary border border-border text-secondary-foreground text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-sm'>
+                  {project.github.split('/').filter(Boolean).pop()}
+                </span>
+              </a>
+            ))}
           {project.liveUrl && (
             <a
               href={project.liveUrl}

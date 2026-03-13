@@ -23,7 +23,7 @@
     "summary": {
       "opella": {
         "title": "Sales Force Effectiveness",
-        "period": "Jan/2025 - Present",
+        "period": "Jan/2025 - Dec/2025",
         "description": "Performance in the Sales Force Effectiveness area, focusing on access management, active workforce data maintenance, and report automation using KNIME and Excel.",
         "mainSkills": {
           "1": {
@@ -34,6 +34,22 @@
           },
           "3": {
             "label": "Scrum"
+          }
+        }
+      },
+      "reply": {
+        "title": "Junior Java Developer Analyst",
+        "period": "Jan/2026 - Present",
+        "description": "I perform data flow analysis in distributed systems, understanding the communication between modules and their responsibilities within the application architecture. I also work on configuring and adjusting roles and permission groups, ensuring the correct application of access rules in the system.",
+        "mainSkills": {
+          "1": {
+            "label": "Java"
+          },
+          "2": {
+            "label": "Docker"
+          },
+          "3": {
+            "label": "Microservices"
           }
         }
       },
@@ -75,6 +91,9 @@
       },
       "grade": {
         "description": "Platform designed for higher education professors to manage undergraduate, postgraduate, and MBA classes. It enables the creation of assessments for one or more classes, automatic feedback generation using artificial intelligence, and provides a dashboard with key indicators, such as class averages and pending evaluations, to streamline performance tracking."
+      },
+      "trackit": {
+        "description": "Personal expense tracking API developed with enterprise-level Java architecture. The project implements DDD, SOLID, and TDD principles, serving as a practical demonstration of software engineering best practices and design patterns."
       }
     }
   },
@@ -84,6 +103,6 @@
     "clickToCopy": "Click on any card to copy the information"
   },
   "footer": {
-    "rights": "Copyright © 2025 by Arthur Spedine. All rights reserved."
+    "rights": "Copyright © 2026 by Arthur Spedine. All rights reserved."
   }
 }

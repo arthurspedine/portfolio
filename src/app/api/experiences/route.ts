@@ -8,6 +8,19 @@ export async function GET(request: NextRequest) {
   const t = await getTranslations({ locale, namespace: 'experiences.summary' })
   const experiences = [
     {
+      title: t('reply.title'),
+      organization: 'Reply',
+      period: t('reply.period'),
+      description: t('reply.description'),
+      icon: '/svg/experiences/reply.svg', // Placeholder
+      type: 'professional' as const,
+      skills: [
+        { name: t('reply.mainSkills.1.label') },
+        { name: t('reply.mainSkills.2.label') },
+        { name: t('reply.mainSkills.3.label') },
+      ],
+    },
+    {
       title: t('opella.title'),
       organization: 'Opella',
       period: t('opella.period'),
