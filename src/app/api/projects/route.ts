@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
         'Next.Js',
       ],
       image: '/projects/grade.png',
-      github: 'https://github.com/arthurspedine/grade-server',
+      github: 'https://github.com/arthurspedine/grade',
       featured: true,
     },
     {
